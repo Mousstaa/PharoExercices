@@ -6,7 +6,7 @@ This repository contains the two exercises as requested.
 
 ## Ex1: Sparse Matrix Transformation
 
-This exercise includes a `Matrix` class with methods for transforming sparse matrices into a compact matrix format and vice versa. Sparse matrices are matrices with many zero values, and this transformation helps save space by storing only the non-zero elements. The repository also provides tests to validate these transformations.
+This package takes a matrix and converts it to its sparse representation (compact form) as in the example https://www.geeksforgeeks.org/sparse-matrix-representation/, for efficient storage.
 
 ### UML Diagram
 ![UML Diagram](Uml/Matrix.png)
@@ -34,7 +34,7 @@ This test method ensures the correctness of both transformations:
 
 ## Ex2: PharoDocGenerator
 
-PharoDocGenerator is a tool designed to automatically generate JavaDoc-like documentation for Pharo packages, classes, their variables, and methods. It analyzes the given package and documents its contents, including the classes, superclasses, subclasses, and the methods with their descriptions.
+PharoDocGenerator generate JavaDoc like documentation for Pharo packages, writing for each class its superclass, variables, subclasses, methods and description in a generated .txt file in the working directory.
 
 ### UML Diagram
 ![UML Diagram](Uml/PharoDoc.png)
@@ -43,27 +43,25 @@ PharoDocGenerator is a tool designed to automatically generate JavaDoc-like docu
 
 ### `PharoDoc` Class
 
-The `PharoDoc` class is used to generate documentation for Pharo packages and their contents. It traverses classes, methods, and comments, then outputs the information in a structured format.
-
-- **`initialize`**  
-  Initializes the `PharoDoc` instance by setting up necessary variables and data structures.
+The `PharoDoc` class is used to generate documentation for Pharo packages and their contents. It goes over classes, subclasses and their varaibles, methods and comments, then outputs the information.
 
 - **`generatePackageDocumentation: package`**  
-  This method generates documentation for a given package. It retrieves information about the classes in the package, their methods, and any comments, and then creates a detailed documentation file.
+  This method generates documentation for a given package. It retrieves information about the package and then creates a detailed .txt documentation file.
 
 ### Test Case: `PharoDocTest`
 
-The `PharoDocTest` class is a unit test to validate `PharoDoc`. It ensures the generated documentation matches the expected format.
+The `PharoDocTest` class is a unit test to validate `PharoDoc`. It verifies that the generated documentation matches the expected format.
 
 - **`testGeneratePackageDocumentation`**  
   This method tests the functionality of `PharoDoc`'s `generatePackageDocumentation`. It:
   1. Creates test classes and assigns comments.
-  2. Calls `generatePackageDocumentation` to produce documentation.
-  3. Compares the generated documentation with the expected output to verify correctness.
+  2. Calls `generatePackageDocumentation` to generate documentation.
+  3. Compares the generated documentation with the expected output for verification.
+  4. removes the additional test classes and subclasses created for testing.
 
 ## Usage
 
-To generate documentation for a package, use the following code:
+To generate documentation for a package, you can use the following code in the playground:
 
 ```smalltalk
 | docGenerator result |
