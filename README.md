@@ -34,7 +34,7 @@ This test method ensures the correctness of both transformations:
 
 ## Ex2: PharoDocGenerator
 
-PharoDocGenerator generate JavaDoc like documentation for Pharo packages, writing for each class its superclass, variables, subclasses, methods and description in a generated .txt file in the working directory.
+PharoDocGenerator generate the equivalent of JavaDoc for Pharo packages, writing for each class its superclass, variables, subclasses, methods and description in a generated .txt file in the working directory.
 
 ### UML Diagram
 ![UML Diagram](Uml/PharoDoc.png)
